@@ -27,5 +27,11 @@ public class ServeurThread extends Thread {
 	public Map<String,String> getDataNotsend(){
 		return dataServer;
 	}
+	public String getIP() {
+		return IP;
+	}
+	public Map<String,String> getData(){
+		return dataServer;
+	}
 	
 }

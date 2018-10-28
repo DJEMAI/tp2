@@ -82,36 +82,7 @@ public class Travail {
 		return dataServers;
 	}
 	//cette methode redivise le travail a donne aux serveurs. Lorsque un serveur tombe on donne son travail aux autre serveurs selon leurs capacités
-	public List<Map<String , String>> DataToResend(Map<String,String> dataServer, int[]capaciteServeurs){
-		List<Map<String , String>> dataServers = null;
-		int sum = IntStream.of(capaciteServeurs).sum();
-		int[] SizeServers=new int[capaciteServeurs.length];
-		int NbLines=dataServer.size();
-		int i1=0;
-		while(i1<SizeServers.length) {
-			int NbLinesForOneServer= (int) capaciteServeurs[i1]*NbLines/sum;
-			i1+=1;
-			SizeServers[i1]=NbLinesForOneServer;
-		}
-		int c=0;
-		int c2=0;
-		int c3=0;
-		for(int i: SizeServers) {
-		
-				for(String key: dataServer.keySet()) {
-					if(c2*c3 <= c && c < (i+c3)) {
-						dataServer.put(key,dataServer.get(key));
-						c++;
-					}
-					
-				}
-				dataServers.add(c2,dataServer);
-				c3=c;
-				c2++;
-		}
-		return null;
-		
-	}
+	
 }
 
 
